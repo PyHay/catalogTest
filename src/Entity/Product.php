@@ -20,7 +20,7 @@ class Product
     private ?string $description = null;
 
     #[ORM\Column]
-    private ?float $weight = null;
+    private float|string $weight;
 
     #[ORM\Column(length: 255)]
     private ?string $category = null;

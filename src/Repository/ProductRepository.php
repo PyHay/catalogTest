@@ -51,7 +51,11 @@ class ProductRepository extends ServiceEntityRepository
 
         if ($sort){
             $query->orderBy("c.$sort", 'ASC')
-            ->getQuery();
+                ->getQuery();
+        } elseif($filter) {
+            $query->andWhere("c.category = :filter")
+                ->setParameter('filter', $filter)
+                ->getQuery();
         } else {
             $query->getQuery();
         }

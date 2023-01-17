@@ -13,10 +13,9 @@
     </form>
 
     <form>
-        <p>filter by:</p>
+        <p>filter by category:</p>
         <label>
             <input type="text" name="filter" value="category"/>
-            <input type="text" name="filter" value="weight"/>
             <button>Применить</button>
         </label>
     </form>
@@ -56,11 +55,11 @@
     <a href="{{ path('app_product_new') }}">Create new</a>
 
     {% if previous >= 0 %}
-        <a href="{{ path('app_product_index', { offset: previous }) }}">Previous</a>
+        <a href="{{ path('app_product_index', { offset: previous, filter: filter }) }}">Previous</a>
     {% endif %}
 
     {% if next < products|length %}
-        <a href="{{ path('app_product_index', { offset: next }) }}">Next</a>
+        <a href="{{ path('app_product_index', { offset: next, filter: filter }) }}">Next</a>
     {% endif %}
 
 {% endblock %}

@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block title %} Форма Загрузки Файла {% endblock %}
+{% block body %}
+    <form method="POST" action="{{ path('handle_import') }}" enctype="multipart/form-data">
+        <input class="input" type="file" name="importFile">
+        <button type="submit" class="button">Загрузить</button>
+    </form>
+{% endblock %}
